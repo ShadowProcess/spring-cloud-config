@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: hello-spring-cloud-web-admin-feign
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+
+server:
+  port: 8765
+
+eureka:
+  client:
+    serverUrl:
+      defaultZone: http://localhost:8761/eureka/  #服务的发现注册中心地址
+
+#开启Feign的熔断器，Feign已经集成了熔断器
+feign:
+  hystrix:
+    enabled: true
